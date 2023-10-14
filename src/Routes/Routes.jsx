@@ -6,6 +6,10 @@ import Home from "../Home/Home/Home";
 import AllBlogs from "../Pages/AllBlogs/AllBlogs";
 import Login from "../Pages/Login/Login";
 import Signup from "../Pages/Signup/Signup";
+import Instructors from "../Pages/Instructors/Instructors";
+import Classes from "../Pages/Classes/Classes";
+import PhotoGallery from "../Pages/PhotoGallery/PhotoGallery";
+import Order from "../Pages/Order/Order";
 // import OurMenu from "../Components/MenuPage/OurMenu/OurMenu";
 // import OrderPage from "../Components/OrderPage/OrderPage";
 // import LogIn from "../Components/LogIn/LogIn";
@@ -48,14 +52,22 @@ import Signup from "../Pages/Signup/Signup";
             path: "signup",
             element: <Signup></Signup>
         },
-    //     {
-    //         path: "/menu",
-    //         element:<OurMenu></OurMenu>
-    //     },
-    //     {
-    //         path: "/order/:category",
-    //         element:<OrderPage></OrderPage>
-    //     }
+        {
+            path: "instructors",
+            element: <Instructors></Instructors>
+        },
+        {
+            path: "classes",
+            element:<Classes></Classes>
+        },
+        {
+            path: "gallery",
+            element:<PhotoGallery></PhotoGallery>
+        },
+        {
+            path: "/order/:category",
+            element:<Order></Order>
+        }
    
       ]
     },

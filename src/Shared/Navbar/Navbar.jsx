@@ -26,26 +26,21 @@ const Navbar = () => {
         <Link to="allblogs">Blogs</Link>
       </li>
       <li>
-        <Link to="">Classes</Link>
+        <Link to="classes">Classes</Link>
       </li>
       <li>
-        <Link to="">About Us</Link>
+        <Link to="gallery">Gallery</Link>
       </li>
       <li>
-        <Link to=""></Link>
+        <Link to="/order/Hocky">Order</Link>
       </li>
 
-      {/* <li>
-        <Link to="/menu">Our Menu</Link>
-      </li>
-      <li>
-        <Link to="/order/salad">Order Food</Link>
-      </li>
-      {
+     
+      {/* {
              isAdmin ? <li><Link to="/dashboard/adminhome">Dashboard</Link></li> : 
              <li><Link to="/dashboard/userhome">Dashboard</Link></li>
-         }
-         <li>
+         } */}
+         {/* <li>
              <Link to="/dashboard/mycart">
              
                  <button className="btn gap-2">
@@ -53,11 +48,11 @@ const Navbar = () => {
                      <div className="badge badge-secondary">+{cart?.length || 0}</div>
                  </button>
              </Link>
-         </li> */}
+         </li>  */}
       {user ? (
         <>
           <button onClick={handleLogOut} className="btn btn-ghost">
-          <small>  LogOut</small>
+          <small className="pb-2">  LogOut</small>
           </button>
         </>
       ) : (

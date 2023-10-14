@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 const Login = () => {
 
 
-  const { signIn } = useAuth
+  const { signIn } = useAuth()
   const [disabled, setDisabled] = useState(true);
  const navigate = useNavigate();
  const location = useLocation();
@@ -27,7 +27,8 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     // console.log(email, password);
-    signIn(email, password).then((result) => {
+    signIn(email, password)
+    .then((result) => {
       const user = result.user;
       console.log(user);
       Swal.fire({
