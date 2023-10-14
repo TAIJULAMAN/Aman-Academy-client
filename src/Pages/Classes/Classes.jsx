@@ -76,15 +76,3 @@ const Classes = () => {
 };
 
 export default Classes;
-
-{
-  /* <Cover
-img={cover1}
-title={"Our Menu"}
-detail={"Would you like to try a dish?"}
-></Cover>
-<SectionTitle subHeading={"don't miss"} heading={"today's offer"}>
-{" "}
-</SectionTitle>
-<MenuCatagory items={offered}></MenuCatagory> */
-}

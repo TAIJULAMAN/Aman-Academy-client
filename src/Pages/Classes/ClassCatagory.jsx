@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import ClassItem from "./ClassItem";
 import Cover from "../../Shared/Cover/Cover";
 
-const ClassCatagory = ({ img, title, items, detail,Category }) => {
+const ClassCatagory = ({ img, title, items, detail}) => {
     return (
         <div className="pt-8">
     {title && <Cover img={img} title={title} detail={detail}></Cover>}
@@ -12,7 +12,7 @@ const ClassCatagory = ({ img, title, items, detail,Category }) => {
       ))}
     </div>
     <div className="text-center my-5">
-     <Link to={`/order/${Category}`}>
+     <Link to={`/order/${title}`}>
      <button className="btn border-orange-600 btn-outline border-0 border-b-4 mt-4">
        Add Now
       </button>

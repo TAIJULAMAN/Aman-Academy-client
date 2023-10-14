@@ -1,5 +1,4 @@
-
-
+import "react-tabs/style/react-tabs.css";
 import { Helmet } from "react-helmet-async";
 import Cover from "../../Shared/Cover/Cover";
 import { useState } from "react";
@@ -27,8 +26,7 @@ const Order = () => {
         <div>
              <Helmet>
                <title>Aman Academy|Order</title>
-             </Helmet>
-        
+             </Helmet>       
              <Cover
                img={img}
                title={"Added Class?"}
