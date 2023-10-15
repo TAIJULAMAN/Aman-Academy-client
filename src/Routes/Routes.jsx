@@ -10,24 +10,22 @@ import Instructors from "../Pages/Instructors/Instructors";
 import Classes from "../Pages/Classes/Classes";
 import PhotoGallery from "../Pages/PhotoGallery/PhotoGallery";
 import Order from "../Pages/Order/Order";
-// import OurMenu from "../Components/MenuPage/OurMenu/OurMenu";
-// import OrderPage from "../Components/OrderPage/OrderPage";
-// import LogIn from "../Components/LogIn/LogIn";
-// import Signup from "../Components/Signup/Signup";
-// import DashBoard from "../Layout/DashBoard";
-// import MyCart from "../Components/DashBoard/MyCart/MyCart";
-// import UserHome from "../Components/DashBoard/UserHome/UserHome";
-// import Reservation from "../Components/DashBoard/Reservation/Reservation";
-// import Payment from "../Components/DashBoard/PaymentHistory/Payment";
 // import AddReview from "../Components/DashBoard/AddReview/AddReview";
 // import Bookings from "../Components/DashBoard/Booking/Bookings";
-// import PrivateRoute from "./PrivateRoute";
-// import AllUsers from "../Components/DashBoard/AllUsers/AllUsers";
-// import AddItem from "../Components/DashBoard/AddItem/AddItem";
-// import AdminRoute from "./AdminRoute";
-// import ManageItem from "../Components/DashBoard/ManageItem/ManageItem";
-// import AdminHome from "../Components/DashBoard/AdminHome/AdminHome";
-// import Payment from "../Components/DashBoard/Payment/Payment";
+import PrivateRoute from "../Routes/PrivateRoute";
+import DashBoard from "../Layout/DashBoard";
+import UserHome from "../DashBoard/UserHome/UserHome";
+import Reservations from "../DashBoard/Reservations/Reservations";
+import PaymentHistory from "../DashBoard/PaymentHistory/PaymentHistory";
+import UserCart from "../DashBoard/UserCart/UserCart";
+import AdminRoute from "../Routes/AdminRoute";
+import AdminHome from "../DashBoard/AdminHome/AdminHome";
+import AddItem from "../DashBoard/AddItem/AddItem";
+import ManageItem from "../DashBoard/ManageItem/ManageItem";
+import AllUsers from "../DashBoard/AllUsers/AllUsers";
+import Payment from "../DashBoard/Payment/Payment";
+
+
 
 
 
@@ -68,32 +66,36 @@ import Order from "../Pages/Order/Order";
             path: "/order/:category",
             element:<Order></Order>
         }
-   
       ]
     },
 
     // dashboard routes..............................................................................
 
-    // {
-    //   path: "dashboard",
-    //   element:<PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
-    //   children: [
-    //     {
-    //       path: "mycart",
-    //       element:<MyCart></MyCart>,
-    //     },
-    //     {
-    //       path: "userhome",
-    //       element:<UserHome></UserHome>
-    //     },
-    //     {
-    //       path: "reservation",
-    //       element:<Reservation></Reservation>
-    //     },
-    //     {
-    //       path: "payment",
-    //       element:<Payment></Payment>
-    //     },
+    {
+      path: "dashboard",
+      element:<DashBoard></DashBoard>,
+      // element:<PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
+      children: [
+        {
+          path: "cart",
+          element:<UserCart></UserCart>
+        },
+        {
+          path: "userhome",
+          element:<UserHome></UserHome>
+        },
+        {
+          path: "reservations",
+          element:<Reservations></Reservations>
+        },
+        {
+          path: "history",
+          element:<PaymentHistory></PaymentHistory>
+        },
+        {
+          path: "payment",
+          element:<Payment></Payment>
+        },
     //     // {
     //     //   path: "reviews",
     //     //   element:<AddReview></AddReview>
@@ -103,23 +105,28 @@ import Order from "../Pages/Order/Order";
     //     //   element:<Bookings></Bookings>
     //     // },
     //     // ...................admin route.........................
-    //     {
-    //       path: "allusers",
-    //       element:<AdminRoute><AllUsers></AllUsers></AdminRoute>
-    //     },
-    //     {
-    //       path: "addItem",
-    //       element:<AdminRoute><AddItem></AddItem></AdminRoute>
-    //     },
-    //     {
-    //       path: "manageitem",
-    //       element:<AdminRoute><ManageItem></ManageItem></AdminRoute>
-    //     },
-    //     {
-    //       path: "adminhome",
-    //       element:<AdminRoute><AdminHome></AdminHome></AdminRoute>
-    //     },
-    //   ]
-    // }
+        {
+          path: "allusers",
+          element:<AllUsers></AllUsers>
+          // element:<AdminRoute><AllUsers></AllUsers></AdminRoute>
+        },
+        {
+          path: "addItem",
+          element:<AdminRoute><AddItem></AddItem></AdminRoute>
+        },
+        {
+          path: "manageitem",
+          element:<AdminRoute><ManageItem></ManageItem></AdminRoute>
+        },
+        {
+          path: "adminhome",
+          element:<AdminRoute><AdminHome></AdminHome></AdminRoute>
+        },
+        {
+          path: "managebookings",
+          element:<AdminRoute><AdminHome></AdminHome></AdminRoute>
+        },
+      ]
+    }
   ]);
  
