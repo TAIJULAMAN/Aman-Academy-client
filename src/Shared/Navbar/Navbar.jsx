@@ -1,15 +1,17 @@
 // import { FaShoppingCart } from 'react-icons/fa';
-// import useCart from "../../CustomHook/useCart";
-// import useAdmin from "../../CustomHook/useAdmin";
 
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../CustomHooks/useAuth";
+import useCart from "../../CustomHooks/useCart";
+import useAdmin from "../../CustomHooks/useAdmin";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
-  // const [isAdmin] = useAdmin();
-  // const [cart] = useCart();
-  // console.log(cart)
+  console.log(user)
+  const [isAdmin] = useAdmin();
+  const [cart] = useCart();
+  const total = cart.reduce((sum, item) => sum + item.price, 0);
+  console.log(total)
 
   const handleLogOut = () => {
     logOut()
@@ -34,12 +36,12 @@ const Navbar = () => {
       <li>
         <Link to="/order/Hocky">Order</Link>
       </li>
-
+      {/* <li><Link to="/dashboard/userhome">Dashboard</Link></li> */}
      
-      {/* {
+      {
              isAdmin ? <li><Link to="/dashboard/adminhome">Dashboard</Link></li> : 
              <li><Link to="/dashboard/userhome">Dashboard</Link></li>
-         } */}
+         }
          {/* <li>
              <Link to="/dashboard/mycart">
              
@@ -102,6 +104,8 @@ const Navbar = () => {
       </div>
       <div className="flex-none">
         <div className="dropdown dropdown-end">
+
+          {/* cart */}
           <label tabIndex={0} className="btn btn-ghost btn-circle">
             <div className="indicator">
               <svg
@@ -118,7 +122,7 @@ const Navbar = () => {
                   d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                 />
               </svg>
-              <span className="badge badge-sm indicator-item">8</span>
+              <span className="badge badge-sm indicator-item">{cart?.length || 0}</span>
             </div>
           </label>
           <div
@@ -126,18 +130,21 @@ const Navbar = () => {
             className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow"
           >
             <div className="card-body">
-              <span className="font-bold text-lg">8 Items</span>
-              <span className="text-info">Subtotal: $999</span>
+              <span className="font-bold text-lg">{cart?.length || 0} Items</span>
+              <span className="text-info">Subtotal:{total} </span>
               <div className="card-actions">
-                <button className="btn btn-primary btn-block">View cart</button>
+               <NavLink to="/dashboard/cart"> <button className="btn btn-primary btn-block">View cart</button></NavLink>
               </div>
             </div>
           </div>
         </div>
+
+        {/* avatar */}
         <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
-              <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+              <img src=""/>
+              {/* <img src={user.photoURL}/> */}
             </div>
           </label>
           <ul
